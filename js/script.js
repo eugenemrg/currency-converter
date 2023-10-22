@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 function handleBaseCurrencyUpdate() {
     baseCode = document.getElementById('base-currencies').value
 
-    fetch('http://127.0.0.1:5555/')
+    fetch(`http://127.0.0.1:5555/rates/${baseCode}`)
         .then(res => res.json())
         .then(data => {
             conversion_rates = data['conversion_rates']
