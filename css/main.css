@@ -92,19 +92,19 @@ html, body{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 16px 4px;
+    padding: 8px 4px;
     max-width: 100%;
     overflow: auto;
-    /* border: 1px solid lightgray;
-    background-color: rgb(240, 240, 240);
-    border-radius: 6px; */
+    /* border: 1px solid lightgray; */
+    background-color: rgb(247, 247, 247);
+    border-radius: 6px;
     width: 100%;
     text-align: center;
 }
 
 .converted-container .converted{
-    font-size: 4em;
+    font-size: 3.2em;
     margin: 0px;
     font-family: 'Gabarito', sans-serif;
-    color: grey;
+    color: rgb(68, 68, 68);
 }
