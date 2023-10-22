@@ -8,7 +8,7 @@ conversion_rates = {}
  * Handles defaults displayed during initial page load
  */
 document.addEventListener('DOMContentLoaded', (e) => {
-    updateConvertedCurrency()
+    handleBaseCurrencyUpdate()
 }, true)
 
 /**
