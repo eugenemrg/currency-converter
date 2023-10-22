@@ -37,13 +37,14 @@ function handleBaseCurrencyUpdate() {
 function updateConvertedCurrency() {
     targetCode = document.getElementById('target-currencies').value
     amount = currencyAmountInput = document.getElementById('amount').value == '' ? 0 : currencyAmountInput = document.getElementById('amount').value
+    convertedAmount = amount * (conversion_rates[targetCode] ?? 1)
 
     convertedAmountSection.innerText = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: `${targetCode}`,
         minimumIntegerDigits: 1,
         minimumFractionDigits: 2,
-    }).format(Number(amount));
+    }).format(Number(convertedAmount));
 }
 
 baseCurrencyCodeSelector.addEventListener('input', handleBaseCurrencyUpdate)
