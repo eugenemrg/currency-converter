@@ -1,0 +1,93 @@
+/* 
+font-family: 'Gabarito', sans-serif;
+font-family: 'Open Sans', sans-serif;
+*/
+
+html, body{
+    position: relative;
+    height: 100%;
+}
+
+.main-container{
+    position: relative;
+    margin: 0 8%;
+    padding: 16px;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.headline-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+}
+
+.headline-container .headline-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.headline-container .headline-content .headline {
+    font-size: 6.4em;
+    line-height: 0.85em;
+    font-family: 'Gabarito', sans-serif;
+    text-align: center;
+}
+
+.headline-container .headline-content .sub-headline {
+    display: block;
+    color: gray;
+    text-decoration: none;
+    font-size: 1em;
+    text-align: center;
+    margin: 32px 0px;
+}
+
+.headline-container .main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.headline-container .main-content .input-container{
+    width: 100%;
+}
+
+.headline-container .main-content .currency-container{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.base, .target{
+    flex-grow: 1;
+}
+
+.input-amount{
+    font-weight: bold;
+}
+
+.converted-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 4px;
+    max-width: 100%;
+    overflow: auto;
+    /* border: 1px solid lightgray;
+    background-color: rgb(240, 240, 240);
+    border-radius: 6px; */
+    width: 100%;
+    text-align: center;
+}
+
+p.converted{
+    font-size: 4em;
+    margin: 0px;
+    font-family: 'Gabarito', sans-serif;
+    color: grey;
+}
