@@ -44,17 +44,19 @@ html, body{
     font-size: 1em;
     text-align: center;
     margin-top: 32px;
+    font-family: 'Work Sans', sans-serif;
+    text-underline-offset: 2px;
 }
 
 .headline-container .headline-content .sub-headline:hover {
-    color: rgb(48, 48, 48);
     text-decoration: underline;
 }
 
 .headline-container .headline-content .headline-notice {
     font-size: 0.8em;
-    margin-top: 2px;
+    margin-top: 4px;
     text-transform: capitalize;
+    font-family: 'Work Sans', sans-serif;
 }
 
 .headline-container .main-content{
@@ -62,6 +64,10 @@ html, body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.headline-container .main-content *{
+    font-family: 'Work Sans', sans-serif;
 }
 
 .headline-container .main-content .input-container{
@@ -96,7 +102,7 @@ html, body{
     text-align: center;
 }
 
-p.converted{
+.converted-container .converted{
     font-size: 4em;
     margin: 0px;
     font-family: 'Gabarito', sans-serif;
