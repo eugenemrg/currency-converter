@@ -108,3 +108,117 @@ html, body{
     font-family: 'Gabarito', sans-serif;
     color: rgb(68, 68, 68);
 }
+
+/*desktops - higher resolution*/
+@media (min-width: 1281px) {
+    .headline-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 32px;
+    }
+}
+
+/*laptops, desktops*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .headline-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 32px;
+    }
+
+    .input-container, .converted-container{
+        max-width: 680px;
+    }
+
+    .headline-container .headline-content .headline {
+        font-size: 4.8em;
+    }
+}
+
+/*tablets (portrait)*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .headline-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 32px;
+    }
+
+    .headline-container .main-content .currency-container{
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .headline-container .headline-content .headline {
+        font-size: 4.8em;
+    }
+}
+
+/*tablets (landscape)*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .headline-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 32px;
+    }
+
+    .headline-container .main-content .currency-container{
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .headline-container .headline-content .headline {
+        font-size: 4.2em;
+    }
+}
+
+/*low resolution tablets, mobiles (landscape)*/
+@media (min-width: 481px) and (max-width: 767px) {
+    .headline-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 32px;
+    }
+
+    .headline-container .headline-content .headline {
+        font-size: 4.2em;
+    }
+
+    .headline-container .main-content .currency-container{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .converted-container .converted{
+        font-size: 2em;
+    }
+}
+
+/*smartphones mobiles (portrait)*/
+@media (max-width: 480px) {
+    .headline-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 32px;
+    }
+
+    .headline-container .headline-content .headline {
+        font-size: 3.6em;
+    }
+
+    .headline-container .main-content .currency-container{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .converted-container .converted{
+        font-size: 1.5em;
+    }
+}
