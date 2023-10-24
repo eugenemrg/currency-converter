@@ -21,7 +21,7 @@ function handleBaseCurrencyUpdate() {
     baseCode = document.getElementById('base-currencies').value
 
     // Add loading icon during conversion rates request
-    convertedAmountSection.innerHTML = '<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>'
+    convertedAmountSection.innerHTML = '<div class="spinner-border" role="status"><span class="sr-only"></span></div>'
 
     fetch(`https://converter-proxy-api.onrender.com/rates/${baseCode}`)
         .then(res => res.json())
