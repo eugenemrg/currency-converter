@@ -20,10 +20,16 @@ document.addEventListener('DOMContentLoaded', (e) => {
 function handleBaseCurrencyUpdate() {
     baseCode = document.getElementById('base-currencies').value
 
+    // Add loading icon during conversion rates request
+    convertedAmountSection.innerHTML = '<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>'
+
     fetch(`https://converter-proxy-api.onrender.com/rates/${baseCode}`)
         .then(res => res.json())
         .then(data => {
             conversion_rates = data['conversion_rates']
+
+            // Remove loading icon
+            convertedAmountSection.innerText = ''
             
             // Update displayed amount to match updated rates for the base currency
             updateConvertedCurrency()
@@ -37,7 +43,7 @@ function handleBaseCurrencyUpdate() {
 function updateConvertedCurrency() {
     targetCode = document.getElementById('target-currencies').value
     amount = currencyAmountInput = document.getElementById('amount').value == '' ? 0 : currencyAmountInput = document.getElementById('amount').value
-    convertedAmount = amount * (conversion_rates[targetCode] ?? 1)
+    convertedAmount = amount * (conversion_rates[targetCode] ?? 0)
 
     convertedAmountSection.innerText = new Intl.NumberFormat("en-US", {
         style: "currency",
