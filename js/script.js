@@ -58,12 +58,14 @@ function updateConvertedCurrency() {
     }).format(Number(convertedAmount));
 }
 
+// Disables input when server is not ready/during conversion rates request
 function disableInputsPendingUpdate() {
     baseCurrencyCodeSelector.disabled = true
     targetCurrencyCodeSelector.disabled = true
     currencyAmountInput.disabled = true
 }
 
+// Enables input when server after conversion rates request is complete
 function enableInputsAfterUpdate() {
     baseCurrencyCodeSelector.disabled = false
     targetCurrencyCodeSelector.disabled = false
