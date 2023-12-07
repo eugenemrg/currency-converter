@@ -6,8 +6,10 @@ conversion_rates = {}
 
 /**
  * Handles defaults displayed during initial page load
+ * Disables input when server is not ready
  */
 document.addEventListener('DOMContentLoaded', (e) => {
+    disableInputsPendingUpdate()
     handleBaseCurrencyUpdate()
 }, true)
 
@@ -33,6 +35,9 @@ function handleBaseCurrencyUpdate() {
             
             // Update displayed amount to match updated rates for the base currency
             updateConvertedCurrency()
+
+            // Enables input once base currency has been updated
+            enableInputsAfterUpdate()
         })
 }
 
@@ -51,6 +56,18 @@ function updateConvertedCurrency() {
         minimumIntegerDigits: 1,
         minimumFractionDigits: 2,
     }).format(Number(convertedAmount));
+}
+
+function disableInputsPendingUpdate() {
+    baseCurrencyCodeSelector.disabled = true
+    targetCurrencyCodeSelector.disabled = true
+    currencyAmountInput.disabled = true
+}
+
+function enableInputsAfterUpdate() {
+    baseCurrencyCodeSelector.disabled = false
+    targetCurrencyCodeSelector.disabled = false
+    document.getElementById('amount').disabled = false
 }
 
 baseCurrencyCodeSelector.addEventListener('input', handleBaseCurrencyUpdate)
